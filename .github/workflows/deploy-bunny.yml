@@ -16,8 +16,6 @@ jobs:
           remove: true
           storageName: ${{ secrets.BUNNY_STORAGE_NAME }}
           storageEndpoint: "storage.bunnycdn.com"
-          storagePassword: ${{ secrets.BUNNY_STORAGE_PASSWORD }}
-          destination: "."
           sourcePattern: "./{assets,thumbs}/**"
           apiKey: ${{ secrets.BUNNY_API_KEY }}
           purgePullZone: true
