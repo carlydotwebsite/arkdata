@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v7
         with: { fetch-depth: 0 }
       - name: Deploy to Bunny.net
-        uses: djang0dev/bunnynet-storage-deploy@v0.0.2
+        uses: djang0dev/bunny-net-storage-deploy@v0.0.2
         with:
           upload: true
           remove: true
