@@ -10,14 +10,12 @@ jobs:
       - uses: actions/checkout@v7
         with: { fetch-depth: 0 }
       - name: Deploy to Bunny.net
-        uses: djang0dev/bunnynet-storage-deployer@v0.0.2
+        uses: Snider/bunnycdn-gh-action@v2.0.1
         with:
-          upload: true
-          remove: true
-          storageName: ${{ secrets.BUNNY_STORAGE_NAME }}
-          storageEndpoint: "storage.bunnycdn.com"
-          sourcePattern: "./{assets,thumbs}/**"
-          apiKey: ${{ secrets.BUNNY_API_KEY }}
-          purgePullZone: true
-          pullZoneId: ${{ secrets.BUNNY_PULL_ZONE }}
-          verbose: true
+          # target directory to be deployed
+          source: "./{assets,thumbs}/**"
+          # storage zone name
+          storageZoneName: ${{ secrets.BUNNY_STORAGE_NAME }}
+          # Storage zone access key
+          accessKey: ${{ secrets.BUNNY_API_KEY }}
+          zoneId: 7027344
