@@ -9,21 +9,17 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with: { fetch-depth: 0 }
-      - uses: certifiedcode/bunny-deploy@v1
+      - name: Deploy to Bunny.net
+        uses: djang0dev/bunnynet-storage-deploy@v0
         with:
-          storage-zone: arkdata
-          public-url: https://liberidata.b-cdn.net/
-          dir: assets
-          # build: npm ci && npm run build
-          # dir: dist
-        env:
-          BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
-      - uses: certifiedcode/bunny-deploy@v1
-        with:
-          storage-zone: arkdata
-          public-url: https://liberidata.b-cdn.net/
-          dir: thumbs
-          # build: npm ci && npm run build
-          # dir: dist
-        env:
-          BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
+          upload: true
+          remove: true
+          storageName: ${{ secrets.BUNNY_STORAGE_NAME }}
+          storageEndpoint: "storage.bunnycdn.com"
+          storagePassword: ${{ secrets.BUNNY_STORAGE_PASSWORD }}
+          destination: "."
+          sourcePattern: "./{assets,thumbs}/**"
+          apiKey: ${{ secrets.BUNNY_API_KEY }}
+          purgePullZone: true
+          pullZoneId: ${{ secrets.BUNNY_PULL_ZONE }}
+          verbose: true
