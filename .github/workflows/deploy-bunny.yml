@@ -1,7 +1,6 @@
 # .github/workflows/deploy-bunny.yml
 name: Deploy to Bunny
 on:
-  push: { branches: [main] }
   workflow_dispatch: {}
 jobs:
   deploy:
@@ -9,45 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with: { fetch-depth: 0 }
-      - name: assets/avg
-        uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
-        with:
-          # target directory to be deployed
-          upload: true
-          source: "assets/avg"
-          destination: "assets/avg"
-          # storage zone name
-          storageZoneName: ${{ secrets.BUNNY_STORAGE_NAME }}
-          # Storage zone access key
-          storagePassword: ${{ secrets.BUNNY_API_KEY }}
-          accessKey: ${{ secrets.BUNNY_API_KEY }}
-          pullZoneId: 7027344
-      - name: assets/arts
-        uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
-        with:
-          # target directory to be deployed
-          upload: true
-          source: "assets/arts"
-          destination: "assets/arts"
-          # storage zone name
-          storageZoneName: ${{ secrets.BUNNY_STORAGE_NAME }}
-          # Storage zone access key
-          storagePassword: ${{ secrets.BUNNY_API_KEY }}
-          accessKey: ${{ secrets.BUNNY_API_KEY }}
-          pullZoneId: 7027344
-      - name: assets/chararts
-        uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
-        with:
-          # target directory to be deployed
-          upload: true
-          source: "assets/chararts"
-          destination: "assets/chararts"
-          # storage zone name
-          storageZoneName: ${{ secrets.BUNNY_STORAGE_NAME }}
-          # Storage zone access key
-          storagePassword: ${{ secrets.BUNNY_API_KEY }}
-          accessKey: ${{ secrets.BUNNY_API_KEY }}
-          pullZoneId: 7027344
       - name: assets/raw/video
         uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
         with:
