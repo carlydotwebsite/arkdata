@@ -9,13 +9,13 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with: { fetch-depth: 0 }
-      - name: Deploy to Bunny.net
+      - name: assets/avg
         uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
         with:
           # target directory to be deployed
           upload: true
-          source: "assets"
-          destination: "assets"
+          source: "assets/avg"
+          destination: "assets/avg"
           # storage zone name
           storageZoneName: ${{ secrets.BUNNY_STORAGE_NAME }}
           # Storage zone access key
@@ -23,7 +23,91 @@ jobs:
           accessKey: ${{ secrets.BUNNY_API_KEY }}
           pullZoneId: 7027344
           purgePullZone: true
-      - name: Deploy to Bunny.net
+      - name: assets/arts
+        uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
+        with:
+          # target directory to be deployed
+          upload: true
+          source: "assets/arts"
+          destination: "assets/arts"
+          # storage zone name
+          storageZoneName: ${{ secrets.BUNNY_STORAGE_NAME }}
+          # Storage zone access key
+          storagePassword: ${{ secrets.BUNNY_API_KEY }}
+          accessKey: ${{ secrets.BUNNY_API_KEY }}
+          pullZoneId: 7027344
+          purgePullZone: true
+      - name: assets/chararts
+        uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
+        with:
+          # target directory to be deployed
+          upload: true
+          source: "assets/chararts"
+          destination: "assets/chararts"
+          # storage zone name
+          storageZoneName: ${{ secrets.BUNNY_STORAGE_NAME }}
+          # Storage zone access key
+          storagePassword: ${{ secrets.BUNNY_API_KEY }}
+          accessKey: ${{ secrets.BUNNY_API_KEY }}
+          pullZoneId: 7027344
+          purgePullZone: true
+      - name: assets/raw/video
+        uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
+        with:
+          # target directory to be deployed
+          upload: true
+          source: "assets/raw/video"
+          destination: "assets/raw/video"
+          # storage zone name
+          storageZoneName: ${{ secrets.BUNNY_STORAGE_NAME }}
+          # Storage zone access key
+          storagePassword: ${{ secrets.BUNNY_API_KEY }}
+          accessKey: ${{ secrets.BUNNY_API_KEY }}
+          pullZoneId: 7027344
+          purgePullZone: true
+      - name: assets/torappu/dynamicassets/avg
+        uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
+        with:
+          # target directory to be deployed
+          upload: true
+          source: "assets/torappu/dynamicassets/avg"
+          destination: "assets/torappu/dynamicassets/avg"
+          # storage zone name
+          storageZoneName: ${{ secrets.BUNNY_STORAGE_NAME }}
+          # Storage zone access key
+          storagePassword: ${{ secrets.BUNNY_API_KEY }}
+          accessKey: ${{ secrets.BUNNY_API_KEY }}
+          pullZoneId: 7027344
+          purgePullZone: true
+      - name: assets/torappu/dynamicassets/arts
+        uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
+        with:
+          # target directory to be deployed
+          upload: true
+          source: "assets/torappu/dynamicassets/arts"
+          destination: "assets/torappu/dynamicassets/arts"
+          # storage zone name
+          storageZoneName: ${{ secrets.BUNNY_STORAGE_NAME }}
+          # Storage zone access key
+          storagePassword: ${{ secrets.BUNNY_API_KEY }}
+          accessKey: ${{ secrets.BUNNY_API_KEY }}
+          pullZoneId: 7027344
+          purgePullZone: true
+      - name: assets/torappu/dynamicassets/sound_beta_2
+        uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
+        with:
+          # target directory to be deployed
+          upload: true
+          source: "assets/torappu/dynamicassets/sound_beta_2"
+          destination: "assets/torappu/dynamicassets/sound_beta_2"
+          # storage zone name
+          storageZoneName: ${{ secrets.BUNNY_STORAGE_NAME }}
+          # Storage zone access key
+          storagePassword: ${{ secrets.BUNNY_API_KEY }}
+          accessKey: ${{ secrets.BUNNY_API_KEY }}
+          pullZoneId: 7027344
+          purgePullZone: true
+      - name: thumbs
         uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
         with:
           # target directory to be deployed
