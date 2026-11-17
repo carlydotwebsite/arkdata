@@ -64,7 +64,6 @@ jobs:
           storagePassword: ${{ secrets.BUNNY_API_KEY }}
           accessKey: ${{ secrets.BUNNY_API_KEY }}
           pullZoneId: 7027344
-          purgePullZone: true
       - name: assets/torappu/dynamicassets/avg
         uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
         with:
@@ -78,7 +77,6 @@ jobs:
           storagePassword: ${{ secrets.BUNNY_API_KEY }}
           accessKey: ${{ secrets.BUNNY_API_KEY }}
           pullZoneId: 7027344
-          purgePullZone: true
       - name: assets/torappu/dynamicassets/arts
         uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
         with:
@@ -92,7 +90,6 @@ jobs:
           storagePassword: ${{ secrets.BUNNY_API_KEY }}
           accessKey: ${{ secrets.BUNNY_API_KEY }}
           pullZoneId: 7027344
-          purgePullZone: true
       - name: assets/torappu/dynamicassets/sound_beta_2
         uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
         with:
@@ -106,7 +103,6 @@ jobs:
           storagePassword: ${{ secrets.BUNNY_API_KEY }}
           accessKey: ${{ secrets.BUNNY_API_KEY }}
           pullZoneId: 7027344
-          purgePullZone: true
       - name: thumbs
         uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
         with:
@@ -120,4 +116,3 @@ jobs:
           accessKey: ${{ secrets.BUNNY_API_KEY }}
           storagePassword: ${{ secrets.BUNNY_API_KEY }}
           pullZoneId: 7027344
-          purgePullZone: true
