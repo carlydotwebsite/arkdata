@@ -22,7 +22,6 @@ jobs:
           storagePassword: ${{ secrets.BUNNY_API_KEY }}
           accessKey: ${{ secrets.BUNNY_API_KEY }}
           pullZoneId: 7027344
-          purgePullZone: true
       - name: assets/arts
         uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
         with:
@@ -36,7 +35,6 @@ jobs:
           storagePassword: ${{ secrets.BUNNY_API_KEY }}
           accessKey: ${{ secrets.BUNNY_API_KEY }}
           pullZoneId: 7027344
-          purgePullZone: true
       - name: assets/chararts
         uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
         with:
@@ -50,7 +48,6 @@ jobs:
           storagePassword: ${{ secrets.BUNNY_API_KEY }}
           accessKey: ${{ secrets.BUNNY_API_KEY }}
           pullZoneId: 7027344
-          purgePullZone: true
       - name: assets/raw/video
         uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
         with:
