@@ -33,5 +33,6 @@ jobs:
           storageZoneName: ${{ secrets.BUNNY_STORAGE_NAME }}
           # Storage zone access key
           accessKey: ${{ secrets.BUNNY_API_KEY }}
+          storagePassword: ${{ secrets.BUNNY_API_KEY }}
           pullZoneId: 7027344
           purgePullZone: true
