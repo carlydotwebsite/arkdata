@@ -10,12 +10,28 @@ jobs:
       - uses: actions/checkout@v7
         with: { fetch-depth: 0 }
       - name: Deploy to Bunny.net
-        uses: Snider/bunnycdn-gh-action@v2.0.1
+        uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
         with:
           # target directory to be deployed
-          source: "./{assets,thumbs}/**"
+          upload: true
+          source: "assets"
+          destination: "assets"
           # storage zone name
           storageZoneName: ${{ secrets.BUNNY_STORAGE_NAME }}
           # Storage zone access key
           accessKey: ${{ secrets.BUNNY_API_KEY }}
-          zoneId: 7027344
+          pullZoneId: 7027344
+          purgePullZone: true
+      - name: Deploy to Bunny.net
+        uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
+        with:
+          # target directory to be deployed
+          upload: true
+          source: "thumbs"
+          destination: "thumbs"
+          # storage zone name
+          storageZoneName: ${{ secrets.BUNNY_STORAGE_NAME }}
+          # Storage zone access key
+          accessKey: ${{ secrets.BUNNY_API_KEY }}
+          pullZoneId: 7027344
+          purgePullZone: true
