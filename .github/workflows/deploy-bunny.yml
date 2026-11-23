@@ -8,6 +8,11 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with: { fetch-depth: 0 }
+      - name: rename files for bnnuy
+        run: |
+          cd assets/avg/characters
+          rename -v -n 's/_(\d{1,2})#(\d{1,2})\$(\d{1,2})/_$1_$2_$3/' avg_*.png
+          cd ../../../
       - name: assets/avg/characters
         uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
         with:
