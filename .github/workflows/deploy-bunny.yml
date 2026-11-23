@@ -8,8 +8,10 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with: { fetch-depth: 0 }
-      - name: install rename
-        run: apt install rename
+      - name: Install Apt Packages
+        uses: ConorMacBride/install-package@v1.1.0
+        with:
+          apt: rename
       - name: rename files for bnnuy
         run: |
           cd assets/avg/characters
