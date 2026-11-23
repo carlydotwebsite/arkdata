@@ -8,13 +8,13 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with: { fetch-depth: 0 }
-      - name: assets/avg
+      - name: assets/avg/characters
         uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
         with:
           # target directory to be deployed
           upload: true
-          source: "assets/avg"
-          destination: "assets/avg"
+          source: "assets/avg/characters"
+          destination: "assets/avg/characters"
           # storage zone name
           storageZoneName: ${{ secrets.BUNNY_STORAGE_NAME }}
           # Storage zone access key
