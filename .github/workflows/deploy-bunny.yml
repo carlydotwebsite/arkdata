@@ -8,6 +8,19 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with: { fetch-depth: 0 }
+      - name: assets/avg
+        uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
+        with:
+          # target directory to be deployed
+          upload: true
+          source: "assets/avg"
+          destination: "assets/avg"
+          # storage zone name
+          storageZoneName: ${{ secrets.BUNNY_STORAGE_NAME }}
+          # Storage zone access key
+          storagePassword: ${{ secrets.BUNNY_API_KEY }}
+          accessKey: ${{ secrets.BUNNY_API_KEY }}
+          pullZoneId: 7027344
       - name: assets/raw/video
         uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
         with:
@@ -28,19 +41,6 @@ jobs:
           upload: true
           source: "assets/torappu/dynamicassets/avg"
           destination: "assets/torappu/dynamicassets/avg"
-          # storage zone name
-          storageZoneName: ${{ secrets.BUNNY_STORAGE_NAME }}
-          # Storage zone access key
-          storagePassword: ${{ secrets.BUNNY_API_KEY }}
-          accessKey: ${{ secrets.BUNNY_API_KEY }}
-          pullZoneId: 7027344
-      - name: assets/torappu/dynamicassets/arts
-        uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
-        with:
-          # target directory to be deployed
-          upload: true
-          source: "assets/torappu/dynamicassets/arts"
-          destination: "assets/torappu/dynamicassets/arts"
           # storage zone name
           storageZoneName: ${{ secrets.BUNNY_STORAGE_NAME }}
           # Storage zone access key
