@@ -15,12 +15,12 @@ jobs:
       - name: rename files for bnnuy
         run: |
           cd assets/avg/characters
-          rename -v -n 's/_(\d{1,2})#(\d{1,2})\$(\d{1,2})/_$1_$2_$3/' avg_*.png
-          ls | grep -P "\d{1,2}#\d{1,2}\\$\d{1,2}" | xargs -d"\n" rm
+          rename -v -n 's/#(\d{1,2})\$(\d{1,2})/_$1_$2/' *.png
+          ls | grep -P "#\d{1,2}\\$\d{1,2}" | xargs -d"\n" rm
           cd ../../../
           cd thumbs
-          rename -v -n 's/_(\d{1,2})#(\d{1,2})\$(\d{1,2})/_$1_$2_$3/' avg_*.webp
-          ls | grep -P "\d{1,2}#\d{1,2}\\$\d{1,2}" | xargs -d"\n" rm
+          rename -v -n 's/#(\d{1,2})\$(\d{1,2})/_$1_$2/' *.webp
+          ls | grep -P "#\d{1,2}\\$\d{1,2}" | xargs -d"\n" rm
           cd ../
       - name: assets/avg/characters
         uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
