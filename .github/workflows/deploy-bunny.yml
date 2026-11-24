@@ -8,12 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with: { fetch-depth: 0 }
-      - name: optimize images
-        uses: newmatik/image-optimizer@v0.2.1
-        with:
-          paths: assets/avg/characters assets/torappu/dynamicassets/avg thumbs
-          quality: 80
-          recursive: true
       - name: Install Apt Packages
         uses: ConorMacBride/install-package@v1.1.0
         with:
