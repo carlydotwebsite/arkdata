@@ -8,6 +8,12 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with: { fetch-depth: 0 }
+      - name: optimize images
+        uses: newmatik/image-optimizer@v0.2.1
+        with:
+          paths: assets/avg/characters assets/torappu/dynamicassets/avg thumbs
+          quality: 80
+          recursive: true
       - name: Install Apt Packages
         uses: ConorMacBride/install-package@v1.1.0
         with:
@@ -16,11 +22,11 @@ jobs:
         run: |
           cd assets/avg/characters
           rename -v -n 's/#(\d{1,2})\$(\d{1,2})/_$1_$2/' *.png
-          ls | grep -P "#\d{1,2}\\$\d{1,2}" | xargs -d"\n" rm
+          ls | grep -P "#\d{1,2}\$\d{1,2}" | xargs -d"\n" rm
           cd ../../../
           cd thumbs
           rename -v -n 's/#(\d{1,2})\$(\d{1,2})/_$1_$2/' *.webp
-          ls | grep -P "#\d{1,2}\\$\d{1,2}" | xargs -d"\n" rm
+          ls | grep -P "#\d{1,2}\$\d{1,2}" | xargs -d"\n" rm
           cd ../
       - name: assets/avg/characters
         uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
