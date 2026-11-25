@@ -28,7 +28,7 @@ jobs:
             echo "status=success" >> $GITHUB_OUTPUT
           fi
   main:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     needs: check
     if: needs.check.outputs.status == 'success'
     steps:
@@ -62,7 +62,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.12"
+          python-version: "3.16"
           cache: "pip"
 
       - name: Install Python dependencies
